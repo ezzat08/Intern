@@ -1,0 +1,29 @@
+uuid: 9c4a6847-fc7a-4a3c-9060-f5458a742899
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_kategori_berita
+    - node.type.berita
+    - taxonomy.vocabulary.kategori_berita
+id: node.berita.field_kategori_berita
+field_name: field_kategori_berita
+entity_type: node
+bundle: berita
+label: 'Kategori Berita'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      kategori_berita: kategori_berita
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

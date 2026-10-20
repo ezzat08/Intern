@@ -1,0 +1,29 @@
+uuid: 4b99a2dd-45cd-4c84-8ba5-ec40367c5b72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sumber_akhbar
+    - node.type.berita
+    - taxonomy.vocabulary.sumber_akhbar
+id: node.berita.field_sumber_akhbar
+field_name: field_sumber_akhbar
+entity_type: node
+bundle: berita
+label: 'Sumber Akhbar'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sumber_akhbar: sumber_akhbar
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
