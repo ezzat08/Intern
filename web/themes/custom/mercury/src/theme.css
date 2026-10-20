@@ -1,0 +1,99 @@
+/**
+ * @file theme.css
+ * shadcn/ui-compatible theme variables for Mercury.
+ *
+ * Color/font/radius values below are mapped from the MYDS (Malaysia
+ * Government Design System, @govtechmy/myds-style) token set:
+ * https://github.com/govtechmy/myds/blob/main/packages/style/styles/theme/{light,dark,color}.css
+ * MYDS uses a numbered 50-950 scale per semantic color; Mercury's shadcn-style
+ * variables only have one slot per role, so the mapping below picks the
+ * closest MYDS shade for each role rather than being a MYDS-provided pairing.
+ *
+ * You can customize these values without rebuilding the compiled CSS. Copy this
+ * file to your web root, so it sits next to index.php, and clear Drupal's
+ * cache. Then, any changes you make in this file should be reflected right away.
+ */
+
+:root {
+  --background: rgb(255 255 255); /* myds bg-white */
+  --foreground: rgb(24 24 27); /* myds gray-900 */
+  --card: rgb(250 250 250); /* myds gray-50 */
+  --card-foreground: rgb(24 24 27); /* myds gray-900 */
+  --primary: rgb(58 117 246); /* myds primary-500 */
+  --primary-foreground: rgb(255 255 255);
+  --secondary: rgb(244 244 245); /* myds gray-100 */
+  --secondary-foreground: rgb(24 24 27); /* myds gray-900 */
+  --muted: rgb(244 244 245); /* myds gray-100 */
+  --muted-foreground: rgb(82 82 91); /* myds gray-600 */
+  --accent: rgb(219 234 254); /* myds primary-100 */
+  --accent-foreground: var(--foreground);
+  --destructive: rgb(239 68 68); /* myds danger-500 */
+  --destructive-foreground: rgb(255 255 255);
+  --border: rgb(228 228 231); /* myds gray-200 */
+  --input: rgb(228 228 231); /* myds gray-200 */
+  --font-sans: "Poppins", "Helvetica Neue", Arial, Helvetica, sans-serif; /* myds heading font */
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "Roboto Mono", "Menlo", "Consolas", "Liberation Mono", monospace; /* myds mono font */
+  --font-body: "Inter", Arial, Helvetica, sans-serif; /* myds body font */
+  --radius: 0.5rem; /* myds borderRadius.md/DEFAULT = 8px */
+  --shadow-x: 0;
+  --shadow-y: 1px;
+  --shadow-blur: 3px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.1;
+  --shadow-color: oklch(0 0 0);
+  --shadow-2xs: 0 1px 3px 1px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0 1px 3px 1px hsl(0 0% 0% / 0.05), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+  --shadow-sm: 0 1px 3px 1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+  --shadow: 0 1px 3px 1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+  --shadow-md: 0 1px 3px 1px hsl(0 0% 0% / 0.1), 0 4px 6px -2px hsl(0 0% 0% / 0.1);
+  --shadow-lg: 0 1px 3px 1px hsl(0 0% 0% / 0.1), 0 8px 10px -2px hsl(0 0% 0% / 0.1);
+  --shadow-xl: 0 1px 3px 1px hsl(0 0% 0% / 0.1), 0 12px 14px -3px hsl(0 0% 0% / 0.1);
+  --shadow-2xl: 0 1px 3px 1px hsl(0 0% 0% / 0.1), 0 16px 18px -3px hsl(0 0% 0% / 0.1);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  /* Set navbar height for hero billboard overlay */
+  --navbar-height: calc(var(--spacing) * 15);
+
+  @media (min-width: 768px) {
+    --navbar-height: calc(var(--spacing) * 18);
+  }
+}
+
+.dark {
+  --background: rgb(24 24 27); /* myds gray-900 */
+  --foreground: rgb(255 255 255);
+  --card: rgb(29 29 33); /* myds gray-850 */
+  --card-foreground: rgb(255 255 255);
+  --primary: rgb(58 117 246); /* myds primary-500 (unchanged in dark) */
+  --primary-foreground: rgb(255 255 255);
+  --secondary: rgb(39 39 42); /* myds gray-800 */
+  --secondary-foreground: rgb(255 255 255);
+  --muted: rgb(29 29 33); /* myds gray-850 */
+  --muted-foreground: rgb(212 212 216); /* myds gray-300 */
+  --accent: rgb(30 58 138); /* myds primary-900 */
+  --accent-foreground: rgb(255 255 255);
+  --destructive: rgb(239 68 68); /* myds danger-500 */
+  --destructive-foreground: rgb(255 255 255);
+  --border: rgb(63 63 70); /* myds gray-700 */
+  --input: rgb(63 63 70); /* myds gray-700 */
+  --font-sans: "Poppins", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "Roboto Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
+  --radius: 0.5rem;
+  --shadow-x: 0;
+  --shadow-y: 1px;
+  --shadow-blur: 3px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.1;
+  --shadow-color: oklch(0 0 0);
+  --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+  --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+  --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+  --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+  --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 12px 14px -1px hsl(0 0% 0% / 0.1);
+}

@@ -1,0 +1,28 @@
+{
+  "mocks": [
+    {
+      "name": "Danger",
+      "props": {
+        "text": "Delete",
+        "variant": "danger-fill",
+        "size": "medium"
+      }
+    },
+    {
+      "name": "Outline",
+      "props": {
+        "text": "Learn more",
+        "variant": "primary-outline",
+        "size": "medium"
+      }
+    },
+    {
+      "name": "Large",
+      "props": {
+        "text": "Get started",
+        "variant": "primary-fill",
+        "size": "large"
+      }
+    }
+  ]
+}
