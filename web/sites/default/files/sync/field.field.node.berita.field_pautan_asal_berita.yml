@@ -1,0 +1,23 @@
+uuid: 164d764e-bdc9-49f3-89fc-f452dfc7c38d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pautan_asal_berita
+    - node.type.berita
+  module:
+    - link
+id: node.berita.field_pautan_asal_berita
+field_name: field_pautan_asal_berita
+entity_type: node
+bundle: berita
+label: 'Pautan Asal Berita'
+description: 'Masukkan URL artikel asal daripada laman web penerbit.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

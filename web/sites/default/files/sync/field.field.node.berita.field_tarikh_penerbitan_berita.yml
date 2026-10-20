@@ -1,0 +1,21 @@
+uuid: d50c7fa0-eccb-48d9-a844-8af1d4b3d24d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tarikh_penerbitan_berita
+    - node.type.berita
+  module:
+    - datetime
+id: node.berita.field_tarikh_penerbitan_berita
+field_name: field_tarikh_penerbitan_berita
+entity_type: node
+bundle: berita
+label: 'Tarikh Penerbitan '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

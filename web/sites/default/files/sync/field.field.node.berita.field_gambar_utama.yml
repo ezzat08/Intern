@@ -1,0 +1,29 @@
+uuid: 3b7c3344-83c3-469a-ba92-21cd8bb6b555
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gambar_utama
+    - media.type.image
+    - node.type.berita
+id: node.berita.field_gambar_utama
+field_name: field_gambar_utama
+entity_type: node
+bundle: berita
+label: 'Gambar Utama'
+description: 'muat naik gambar utama bagi berita ini'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

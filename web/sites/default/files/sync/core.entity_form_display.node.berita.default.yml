@@ -1,0 +1,213 @@
+uuid: c9e111a9-4374-4084-a366-6081dd7ac880
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.berita.field_fail_keratan_akhbar
+    - field.field.node.berita.field_foto_album
+    - field.field.node.berita.field_gambar_utama
+    - field.field.node.berita.field_jenis_kandungan
+    - field.field.node.berita.field_kandungan_berita
+    - field.field.node.berita.field_kapsyen_gambar
+    - field.field.node.berita.field_kategori_berita
+    - field.field.node.berita.field_kategori_ucapan
+    - field.field.node.berita.field_lampiran_media
+    - field.field.node.berita.field_lampiran_pdf
+    - field.field.node.berita.field_pautan_asal_berita
+    - field.field.node.berita.field_ringkasan_berita
+    - field.field.node.berita.field_sumber_akhbar
+    - field.field.node.berita.field_sumber_penulis
+    - field.field.node.berita.field_tarikh_penerbitan_berita
+    - node.type.berita
+  module:
+    - content_moderation
+    - datetime
+    - field_group
+    - link
+    - media_library
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_keratan_akhbar:
+      children:
+        - field_sumber_akhbar
+        - field_pautan_asal_berita
+        - field_fail_keratan_akhbar
+      label: 'Keratan Akhbar'
+      region: content
+      parent_name: ''
+      weight: 18
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        description: ''
+        required_fields: true
+id: node.berita.default
+targetEntityType: node
+bundle: berita
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_fail_keratan_akhbar:
+    type: media_library_widget
+    weight: 20
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_foto_album:
+    type: media_library_widget
+    weight: 19
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_gambar_utama:
+    type: media_library_widget
+    weight: 9
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_jenis_kandungan:
+    type: options_select
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_kandungan_berita:
+    type: text_textarea
+    weight: 12
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_kapsyen_gambar:
+    type: string_textfield
+    weight: 10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_kategori_berita:
+    type: options_buttons
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_kategori_ucapan:
+    type: options_select
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_lampiran_media:
+    type: media_library_widget
+    weight: 14
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_lampiran_pdf:
+    type: media_library_widget
+    weight: 13
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_pautan_asal_berita:
+    type: link_default
+    weight: 19
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_ringkasan_berita:
+    type: string_textarea
+    weight: 11
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_sumber_akhbar:
+    type: options_select
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_sumber_penulis:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tarikh_penerbitan_berita:
+    type: datetime_default
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  promote: true
+  publish_on: true
+  publish_state: true
+  sticky: true
+  unpublish_on: true
+  unpublish_state: true
