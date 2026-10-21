@@ -1045,6 +1045,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/single_content_sync' => array(
+            'pretty_version' => '1.4.18',
+            'version' => '1.4.18.0',
+            'reference' => '1.4.18',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/single_content_sync',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/site_template_helper' => array(
             'pretty_version' => '1.0.4',
             'version' => '1.0.4.0',

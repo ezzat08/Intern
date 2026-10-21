@@ -1,0 +1,4 @@
+services:
+  pp_news.related_news:
+    class: Drupal\pp_news\Service\RelatedNewsService
+    arguments: ['@entity_type.manager']
