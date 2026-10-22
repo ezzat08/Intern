@@ -1,0 +1,7 @@
+pp_news.settings:
+  path: '/admin/config/content/pp-news'
+  defaults:
+    _form: '\Drupal\pp_news\Form\PpNewsSettingsForm'
+    _title: 'PP News Settings'
+  requirements:
+    _permission: 'administer site configuration'
