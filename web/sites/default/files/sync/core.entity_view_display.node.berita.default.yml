@@ -1,0 +1,160 @@
+uuid: 78a09e1a-7f3f-42ca-bd5f-3f2b8a076770
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.berita.field_fail_keratan_akhbar
+    - field.field.node.berita.field_foto_album
+    - field.field.node.berita.field_gambar_utama
+    - field.field.node.berita.field_jenis_kandungan
+    - field.field.node.berita.field_kandungan_berita
+    - field.field.node.berita.field_kapsyen_gambar
+    - field.field.node.berita.field_kategori_berita
+    - field.field.node.berita.field_kategori_ucapan
+    - field.field.node.berita.field_lampiran_media
+    - field.field.node.berita.field_lampiran_pdf
+    - field.field.node.berita.field_pautan_asal_berita
+    - field.field.node.berita.field_ringkasan_berita
+    - field.field.node.berita.field_sumber_akhbar
+    - field.field.node.berita.field_sumber_penulis
+    - field.field.node.berita.field_tarikh_penerbitan_berita
+    - node.type.berita
+  module:
+    - datetime
+    - link
+    - text
+    - user
+id: node.berita.default
+targetEntityType: node
+bundle: berita
+mode: default
+content:
+  field_fail_keratan_akhbar:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_gambar_utama:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_jenis_kandungan:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_kandungan_berita:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_kapsyen_gambar:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_kategori_berita:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_kategori_ucapan:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_lampiran_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_lampiran_pdf:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_pautan_asal_berita:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_ringkasan_berita:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_sumber_akhbar:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_sumber_penulis:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_tarikh_penerbitan_berita:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+hidden:
+  field_foto_album: true
+  search_api_excerpt: true

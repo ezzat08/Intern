@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: HlN7eAN2N4JIHsYv56V4E7sqC9bS609KwvGFjyD_mgk
+langcode: en
+uuid: f1091ac5-90ce-48fc-9af4-4eaf5b8b9b95
+name: 'Portal Rasmi Kerajaan Negeri Sembilan'
+mail: webmaster@pocketpixel.com
+slogan: ''
+page:
+  403: /user/login
+  404: ''
+  front: /page/1
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: null

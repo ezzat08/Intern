@@ -1,0 +1,20 @@
+uuid: 007b9801-436a-40ef-8526-2d0b23a20806
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_tarikh_penerbitan_berita
+field_name: field_tarikh_penerbitan_berita
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

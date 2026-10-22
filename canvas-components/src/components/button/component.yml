@@ -1,0 +1,49 @@
+name: Button
+machineName: button
+status: true
+required:
+  - text
+props:
+  properties:
+    text:
+      title: Text
+      type: string
+      examples:
+        - Click me
+    variant:
+      title: Variant
+      type: string
+      enum:
+        - default-outline
+        - default-ghost
+        - danger-fill
+        - danger-outline
+        - danger-ghost
+        - primary-fill
+        - primary-outline
+        - primary-ghost
+      meta:enum:
+        default-outline: Default Outline
+        default-ghost: Default Ghost
+        danger-fill: Danger Fill
+        danger-outline: Danger Outline
+        danger-ghost: Danger Ghost
+        primary-fill: Primary Fill
+        primary-outline: Primary Outline
+        primary-ghost: Primary Ghost
+      examples:
+        - primary-fill
+    size:
+      title: Size
+      type: string
+      enum:
+        - small
+        - medium
+        - large
+      meta:enum:
+        small: Small
+        medium: Medium
+        large: Large
+      examples:
+        - medium
+slots: []

@@ -1,0 +1,29 @@
+uuid: 9d7c4386-3416-4b93-b688-677ab51dc517
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fail_keratan_akhbar
+    - media.type.document
+    - node.type.berita
+id: node.berita.field_fail_keratan_akhbar
+field_name: field_fail_keratan_akhbar
+entity_type: node
+bundle: berita
+label: 'Fail Keratan Akhbar'
+description: 'Muat naik fail keratan akhbar dalam format PDF, JPG atau PNG.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
