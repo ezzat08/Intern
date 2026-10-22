@@ -1,0 +1,48 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
+name: News card
+description: A reusable teaser card for Balai Berita content.
+group: Card
+props:
+  type: object
+  required:
+    - title
+    - url
+  properties:
+    title:
+      type: string
+      title: Title
+      examples:
+        - Pembaharuan Masjid Putih
+    url:
+      type: string
+      title: Link
+      format: uri-reference
+    summary:
+      type: string
+      title: Summary
+      examples:
+        - Ringkasan berita terkini dari Negeri Sembilan.
+    date_iso:
+      type: string
+      title: Machine-readable publication date
+      examples:
+        - "2026-10-19"
+    date_label:
+      type: string
+      title: Publication date
+      examples:
+        - 19 Oct 2026
+    category:
+      type: string
+      title: Category
+      examples:
+        - Berita Semasa
+    author:
+      type: string
+      title: Author
+      examples:
+        - Unit Komunikasi Korporat
+slots:
+  image:
+    title: Featured image
+    description: The rendered featured media field.

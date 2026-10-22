@@ -1,0 +1,40 @@
+<article
+  class="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition duration-300 focus-within:ring-2 focus-within:ring-primary hover:-translate-y-1 hover:shadow-xl"
+>
+  {% if image is not empty %}
+    <div
+      class="aspect-16/9 overflow-hidden bg-muted [&_.field]:h-full [&_.field__item]:h-full [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:transition [&_img]:duration-500 group-hover:[&_img]:scale-105"
+    >
+      {{ image }}
+    </div>
+  {% endif %}
+
+  <div class="flex flex-1 flex-col gap-4 p-5 md:p-6">
+    {% if category is not empty or date_label is not empty %}
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+        {% if category is not empty %}
+          <span class="font-semibold text-primary">{{ category }}</span>
+        {% endif %}
+        {% if date_label is not empty %}
+          <time datetime="{{ date_iso|default('') }}">{{ date_label }}</time>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <h2 class="text-xl leading-tight font-semibold text-card-foreground md:text-2xl">
+      <a href="{{ url }}" class="after:absolute after:inset-0 after:content-[''] focus:outline-none">{{ title }}</a>
+    </h2>
+
+    {% if summary is not empty %}
+      <p class="mb-0 line-clamp-3 text-base text-muted-foreground">
+        {{ summary }}
+      </p>
+    {% endif %}
+
+    {% if author is not empty %}
+      <p class="mt-auto mb-0 pt-2 text-sm font-medium text-card-foreground">
+        {{ author }}
+      </p>
+    {% endif %}
+  </div>
+</article>

@@ -1,0 +1,80 @@
+{#
+/**
+ * Full display for the Berita content type.
+ *
+ * The machine name is `berita`, therefore the valid suggestion is
+ * node--berita--full.html.twig (rather than node--news--full.html.twig).
+ */
+#}
+<article {{ attributes.addClass('news-detail') }}>
+  <header class="container mx-auto max-w-4xl px-5 pt-6 pb-8 md:px-8 md:pt-10 md:pb-12">
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted-foreground md:text-base">
+      {% if news_card.category is not empty %}
+        <span class="font-semibold text-primary">{{ news_card.category }}</span>
+      {% endif %}
+      {% if news_card.date_label is not empty %}
+        <time datetime="{{ news_card.date_iso }}">{{ news_card.date_label }}</time>
+      {% endif %}
+      {% if news_card.author is not empty %}
+        <span>{{ 'Oleh'|t }} {{ news_card.author }}</span>
+      {% endif %}
+    </div>
+
+    {% if news_card.summary is not empty %}
+      <p class="mt-5 mb-0 text-lg leading-relaxed text-muted-foreground md:text-xl">
+        {{ news_card.summary }}
+      </p>
+    {% endif %}
+  </header>
+
+  {% if content.field_gambar_utama is not empty %}
+    <figure class="container mx-auto max-w-6xl px-5 md:px-8">
+      <div
+        class="aspect-16/9 overflow-hidden rounded-2xl bg-muted shadow-lg [&_.field]:h-full [&_.field__item]:h-full [&_img]:h-full [&_img]:w-full [&_img]:object-cover"
+      >
+        {{ content.field_gambar_utama }}
+      </div>
+      {% if news_caption is not empty %}
+        <figcaption class="mt-3 text-sm text-muted-foreground">
+          {{ news_caption }}
+        </figcaption>
+      {% endif %}
+    </figure>
+  {% endif %}
+
+  <div class="container mx-auto max-w-3xl px-5 py-10 md:px-8 md:py-14">
+    <div
+      class="text-base leading-8 text-foreground md:text-lg [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-4 [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:text-3xl [&_h2]:font-semibold [&_h3]:mt-8 [&_h3]:mb-3 [&_h3]:text-2xl [&_h3]:font-semibold [&_p]:mb-5 [&_ul]:mb-5 [&_ul]:list-disc [&_ul]:pl-6"
+    >
+      {{ content.field_kandungan_berita }}
+    </div>
+
+    {% if content.field_pautan_asal_berita is not empty %}
+      <div class="mt-8 border-t border-border pt-6">
+        {{ content.field_pautan_asal_berita }}
+      </div>
+    {% endif %}
+
+    {% if content.field_lampiran_media is not empty or content.field_lampiran_pdf is not empty or content.field_fail_keratan_akhbar is not empty %}
+      <aside class="mt-10 rounded-2xl bg-muted p-5 md:p-6" aria-labelledby="news-attachments-title">
+        <h2 id="news-attachments-title" class="mb-4 text-xl font-semibold">{{ 'Lampiran'|t }}</h2>
+        {{ content.field_lampiran_media }}
+        {{ content.field_lampiran_pdf }}
+        {{ content.field_fail_keratan_akhbar }}
+      </aside>
+    {% endif %}
+  </div>
+</article>
+
+{% if related_news is not empty %}
+  <section class="border-t border-border bg-muted/40 py-10 md:py-14" aria-labelledby="related-news-title">
+    <div class="container mx-auto px-5 md:px-8">
+      <h2 id="related-news-title" class="mb-6 text-3xl font-semibold md:mb-8 md:text-4xl">{{ 'Berita Berkaitan'|t }}</h2>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {% for item in related_news %}
+          {{ item }}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
