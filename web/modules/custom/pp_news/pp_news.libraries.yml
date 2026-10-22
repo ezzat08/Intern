@@ -2,3 +2,8 @@ card_list:
   css:
     theme:
       css/pp-news-card-list.css: {}
+  js:
+    js/pp-news-carousel.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
