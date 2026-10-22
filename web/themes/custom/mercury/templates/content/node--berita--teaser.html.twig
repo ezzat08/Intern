@@ -1,0 +1,24 @@
+{#
+/**
+ * News teaser rendered with the reusable News card SDC.
+ *
+ * With Twig debug enabled, Drupal prints this template suggestion and its
+ * alternatives in the page source around the rendered node.
+ */
+#}
+{{
+  include(
+    'mercury:news-card',
+    {
+      title: news_card.title,
+      url: news_card.url,
+      summary: news_card.summary,
+      date_iso: news_card.date_iso,
+      date_label: news_card.date_label,
+      category: news_card.category,
+      author: news_card.author,
+      image: content.field_gambar_utama
+    },
+    with_context: false
+  )
+}}
