@@ -1,0 +1,23 @@
+<div class="pp-news-list">
+  {% for item in items %}
+    <article class="pp-news-item">
+
+      {% if item.image %}
+        <div class="pp-news-item__thumbnail">
+          {{ item.image }}
+        </div>
+      {% endif %}
+
+      <div class="pp-news-item__content">
+        {% if item.date %}
+          <time class="pp-news-item__date">{{ item.date }}</time>
+        {% endif %}
+
+        <h3 class="pp-news-item__title">
+          <a href="{{ item.url }}">{{ item.title }}</a>
+        </h3>
+      </div>
+
+    </article>
+  {% endfor %}
+</div>

@@ -1,0 +1,5 @@
+name : 'PP News'
+type: module
+description: 'Custom Function for news content'
+core_version_requirement: ^11
+package: Custome

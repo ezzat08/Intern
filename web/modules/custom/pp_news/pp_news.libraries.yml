@@ -1,0 +1,4 @@
+card_list:
+  css:
+    theme:
+      css/pp-news-card-list.css: {}
