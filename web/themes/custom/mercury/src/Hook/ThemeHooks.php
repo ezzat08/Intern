@@ -114,6 +114,61 @@ final class ThemeHooks {
   }
 
   /**
+   * Implements hook_preprocess_node().
+   */
+  #[Hook('preprocess_node')]
+  public function preprocessNode(array &$variables): void {
+    $node = $variables['node'] ?? NULL;
+    if (!$node instanceof NodeInterface || $node->bundle() !== 'berita') {
+      return;
+    }
+
+    $date_value = $node->get('field_tarikh_penerbitan_berita')->value;
+    $timestamp = $date_value ? (int) strtotime((string) $date_value) : (int) $node->getCreatedTime();
+    $category = $node->get('field_kategori_berita')->entity;
+
+    $variables['news_card'] = [
+      'title' => $node->label(),
+      'url' => $node->toUrl()->toString(),
+      'summary' => $node->get('field_ringkasan_berita')->value ?? '',
+      'date_iso' => $timestamp ? date('Y-m-d', $timestamp) : '',
+      'date_label' => $timestamp ? date('j M Y', $timestamp) : '',
+      'category' => $category?->label() ?? '',
+      'author' => $node->get('field_sumber_penulis')->value ?? '',
+    ];
+    $variables['news_caption'] = $node->get('field_kapsyen_gambar')->value ?? '';
+
+    if (($variables['view_mode'] ?? '') !== 'full') {
+      return;
+    }
+
+    $storage = $this->entityTypeManager->getStorage('node');
+    $related_query = $storage->getQuery()
+      ->accessCheck(TRUE)
+      ->condition('type', 'berita')
+      ->condition('status', NodeInterface::PUBLISHED)
+      ->condition('nid', $node->id(), '<>')
+      ->sort('created', 'DESC')
+      ->range(0, 3);
+
+    $category_id = $node->get('field_kategori_berita')->target_id;
+    if ($category_id) {
+      $related_query->condition('field_kategori_berita.target_id', $category_id);
+    }
+
+    $related_ids = $related_query->execute();
+
+    if ($related_ids) {
+      $related_nodes = $storage->loadMultiple($related_ids);
+      $view_builder = $this->entityTypeManager->getViewBuilder('node');
+      $variables['related_news'] = [];
+      foreach ($related_nodes as $related_node) {
+        $variables['related_news'][] = $view_builder->view($related_node, 'teaser');
+      }
+    }
+  }
+
+  /**
    * Implements template_preprocess_html().
    */
   #[Hook('preprocess_html')]

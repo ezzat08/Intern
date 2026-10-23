@@ -31,62 +31,53 @@ mode: default
 content:
   field_fail_keratan_akhbar:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 114
-    region: content
-  field_foto_album:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 117
+    weight: 14
     region: content
   field_gambar_utama:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 104
+    weight: 2
     region: content
   field_jenis_kandungan:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    weight: 110
+    weight: 11
     region: content
   field_kandungan_berita:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 106
+    weight: 5
     region: content
   field_kapsyen_gambar:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
       link_rel: canonical
     third_party_settings: {  }
-    weight: 107
+    weight: 3
     region: content
   field_kategori_berita:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    weight: 103
+    weight: 1
     region: content
   field_kategori_ucapan:
     type: entity_reference_label
@@ -94,29 +85,29 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 116
+    weight: 10
     region: content
   field_lampiran_media:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 109
+    weight: 8
     region: content
   field_lampiran_pdf:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 108
+    weight: 7
     region: content
   field_pautan_asal_berita:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -124,44 +115,47 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 112
+    weight: 13
     region: content
   field_ringkasan_berita:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 105
+    weight: 4
     region: content
   field_sumber_akhbar:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    weight: 111
+    weight: 12
     region: content
   field_sumber_penulis:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
       link_rel: canonical
     third_party_settings: {  }
-    weight: 102
+    weight: 6
     region: content
   field_tarikh_penerbitan_berita:
     type: datetime_default
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 115
+    weight: 0
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 9
     region: content
-hidden: {  }
+hidden:
+  field_foto_album: true
+  langcode: true
+  search_api_excerpt: true

@@ -12,7 +12,7 @@ bundle: berita
 label: Sumber/Penulis
 description: 'Masukkan nama bahagian, jabatan atau penulis yang menyediakan berita.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

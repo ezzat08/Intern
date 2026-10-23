@@ -1,0 +1,33 @@
+uuid: 219315fb-79cb-41f4-9e64-90d91f0249a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.berita
+  module:
+    - language
+    - node
+id: balai_berita_url_pattern
+label: 'Balai Berita URL Pattern'
+type: 'canonical_entities:node'
+pattern: '/berita/[node:title]'
+selection_criteria:
+  0f5cc6dd-8b73-446e-aa49-b17b8b9bd73e:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      berita: berita
+  c75b496b-1a60-470c-ab61-87bf02048596:
+    id: language
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      ms: ms
+selection_logic: and
+weight: -5
+relationships:
+  'node:langcode:language':
+    label: Language

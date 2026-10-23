@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.berita.field_tarikh_penerbitan_berita
     - node.type.berita
   module:
+    - conditional_fields
     - content_moderation
     - datetime
     - field_group
@@ -37,7 +38,40 @@ third_party_settings:
       label: 'Keratan Akhbar'
       region: content
       parent_name: ''
-      weight: 18
+      weight: 15
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        description: ''
+        required_fields: true
+    group_galeri:
+      children:
+        - field_foto_album
+      label: Galeri
+      region: content
+      parent_name: ''
+      weight: 16
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        description: ''
+        required_fields: true
+    group_maklumat_berita:
+      children:
+        - field_sumber_penulis
+        - field_kategori_berita
+        - field_ringkasan_berita
+        - field_kandungan_berita
+      label: 'Maklumat Berita'
+      region: content
+      parent_name: ''
+      weight: 5
       format_type: fieldset
       format_settings:
         classes: ''
@@ -53,13 +87,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 2
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   field_fail_keratan_akhbar:
     type: media_library_widget
-    weight: 20
+    weight: 21
     region: content
     settings:
       media_types: {  }
@@ -73,20 +107,20 @@ content:
     third_party_settings: {  }
   field_gambar_utama:
     type: media_library_widget
-    weight: 9
+    weight: 2
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_jenis_kandungan:
     type: options_select
-    weight: 15
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   field_kandungan_berita:
     type: text_textarea
-    weight: 12
+    weight: 9
     region: content
     settings:
       rows: 5
@@ -94,7 +128,7 @@ content:
     third_party_settings: {  }
   field_kapsyen_gambar:
     type: string_textfield
-    weight: 10
+    weight: 3
     region: content
     settings:
       size: 60
@@ -102,41 +136,60 @@ content:
     third_party_settings: {  }
   field_kategori_berita:
     type: options_buttons
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   field_kategori_ucapan:
     type: options_select
-    weight: 17
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   field_lampiran_media:
     type: media_library_widget
-    weight: 14
+    weight: 7
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_lampiran_pdf:
     type: media_library_widget
-    weight: 13
+    weight: 6
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_pautan_asal_berita:
     type: link_default
-    weight: 19
+    weight: 20
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        aa17a109-bc7d-4c86-ac82-6ac608f9ca81:
+          entity_type: node
+          bundle: berita
+          dependee: field_jenis_kandungan
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_ringkasan_berita:
     type: string_textarea
-    weight: 11
+    weight: 8
     region: content
     settings:
       rows: 5
@@ -150,7 +203,7 @@ content:
     third_party_settings: {  }
   field_sumber_penulis:
     type: string_textfield
-    weight: 7
+    weight: 6
     region: content
     settings:
       size: 60
@@ -158,25 +211,32 @@ content:
     third_party_settings: {  }
   field_tarikh_penerbitan_berita:
     type: datetime_default
-    weight: 16
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 5
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 3
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 6
+    weight: 14
     region: content
     settings:
       display_label: true
@@ -191,7 +251,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 1
+    weight: 9
     region: content
     settings:
       match_operator: CONTAINS
@@ -200,7 +260,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 4
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }

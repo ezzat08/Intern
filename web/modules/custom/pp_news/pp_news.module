@@ -1,0 +1,46 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function pp_news_theme($existing, $type, $theme, $path): array {
+  return [
+    'pp_news_card_list' => [
+      'variables' => [
+        'items' => [],
+        'title' => '',
+      ],
+      'template' => 'pp-news-card-list',
+      'path' => $path . '/templates',
+      'libraries' => [
+        'pp_news/card_list',
+      ],
+    ],
+  ];
+}
+
+
+
+/**
+ * Implements hook_form_alter().
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function pp_news_form_alter(array &$form, FormStateInterface $form_state, $form_id): void {
+  if ($form_id !== 'node_berita_edit_form') {
+    return;
+  }
+
+  if (isset($form['field_kategori_berita']['widget'])) {
+    $form['field_kategori_berita']['widget']['#description'] = t(
+      'Select one or more categories. Other published news articles sharing at least one category may appear in the Related News section.'
+    );
+  }
+}
+
+
+

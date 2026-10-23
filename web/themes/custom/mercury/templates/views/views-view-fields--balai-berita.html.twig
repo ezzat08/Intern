@@ -1,0 +1,23 @@
+{% set news_node = row._entity %}
+
+{{
+  include(
+    'mercury:news-card',
+    {
+      title: news_node.label,
+      url: path(
+        'entity.node.canonical',
+        {
+          node: news_node.id
+        }
+      ),
+      summary: news_node.field_ringkasan_berita.value,
+      date_iso: news_node.field_tarikh_penerbitan_berita.value|default(''),
+      date_label: fields.field_tarikh_penerbitan_berita.content|striptags|trim,
+      category: news_node.field_kategori_berita.entity.label|default(fields.field_jenis_kandungan.content|striptags|trim),
+      author: news_node.field_sumber_penulis.value,
+      image: fields.field_gambar_utama.content
+    },
+    with_context: false
+  )
+}}
