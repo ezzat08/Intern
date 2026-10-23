@@ -10,6 +10,7 @@ function pp_news_theme($existing, $type, $theme, $path): array {
     'pp_news_card_list' => [
       'variables' => [
         'items' => [],
+        'title' => '',
       ],
       'template' => 'pp-news-card-list',
       'path' => $path . '/templates',
