@@ -14,7 +14,7 @@ bundle: berita
 label: 'Pautan Asal Berita'
 description: 'Masukkan URL artikel asal daripada laman web penerbit.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
