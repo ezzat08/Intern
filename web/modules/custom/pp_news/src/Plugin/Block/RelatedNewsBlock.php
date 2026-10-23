@@ -18,7 +18,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
  *
  * @Block(
  *   id = "pp_news_related_news",
- *   admin_label = @Translation("PP News: Related News"),
+ *   admin_label = @Translation("Related Post"),
  *   category = @Translation("Custom")
  * )
  */
@@ -196,6 +196,7 @@ elseif (is_numeric($request_node)) {
 
     return [
       '#theme' => 'pp_news_card_list',
+      '#title' => $this->t('Related Post'),
       '#items' => $items,
       '#attached' => [
         'library' => [

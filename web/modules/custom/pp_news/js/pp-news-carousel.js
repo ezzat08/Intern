@@ -1,4 +1,3 @@
-
 (function (Drupal, once) {
   Drupal.behaviors.ppNewsCarousel = {
     attach(context) {
@@ -18,16 +17,32 @@
             return;
           }
 
+          const getStep = () => {
+            const item = track.querySelector(
+              '.pp-news-carousel__item'
+            );
+
+            if (!item) {
+              return track.clientWidth;
+            }
+
+            const gap = parseFloat(
+              getComputedStyle(track).columnGap
+            ) || 0;
+
+            return item.getBoundingClientRect().width + gap;
+          };
+
           previous.addEventListener('click', () => {
             track.scrollBy({
-              left: -track.clientWidth,
+              left: -getStep(),
               behavior: 'smooth',
             });
           });
 
           next.addEventListener('click', () => {
             track.scrollBy({
-              left: track.clientWidth,
+              left: getStep(),
               behavior: 'smooth',
             });
           });

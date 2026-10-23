@@ -4,21 +4,36 @@
 }
 
 .pp-news-carousel {
+  --carousel-gap: 1.25rem;
   position: relative;
   max-width: 80rem;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
+/* Horizontal carousel track */
 .pp-news-carousel__track {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
+  display: flex;
+  gap: var(--carousel-gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding-bottom: 1rem;
 }
 
+.pp-news-carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cards: approximately 3 visible, with the next one peeking */
 .pp-news-carousel__item {
+  flex: 0 0 calc((100% - 2 * var(--carousel-gap)) / 3.2);
   min-width: 0;
+  scroll-snap-align: start;
 }
 
+/* Navigation arrows */
 .pp-news-carousel__arrow {
   position: absolute;
   z-index: 1;
@@ -43,34 +58,26 @@
 }
 
 .pp-news-carousel__arrow--prev {
-  left: -1rem;
+  left: -0.25rem;
 }
 
 .pp-news-carousel__arrow--next {
-  right: -1rem;
+  right: -0.25rem;
 }
 
+/* Tablet and mobile */
 @media (max-width: 768px) {
   .pp-news {
     padding-right: 0;
     padding-left: 0;
   }
 
-  .pp-news-carousel__track {
-    display: flex;
-    overflow-x: auto;
-    padding: 0 1.25rem 1rem;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-  }
-
-  .pp-news-carousel__track::-webkit-scrollbar {
-    display: none;
+  .pp-news-carousel {
+    padding: 0;
   }
 
   .pp-news-carousel__item {
-    flex: 0 0 min(86vw, 22rem);
-    scroll-snap-align: start;
+    flex-basis: 80%;
   }
 
   .pp-news-carousel__arrow--prev {
@@ -79,5 +86,17 @@
 
   .pp-news-carousel__arrow--next {
     right: 0.5rem;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+  .pp-news-carousel__item {
+    flex-basis: 86%;
+  }
+
+  .pp-news-carousel__arrow {
+    width: 2.25rem;
+    height: 2.25rem;
   }
 }
