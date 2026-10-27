@@ -26,15 +26,11 @@
     </h2>
 
     {% if summary is not empty %}
-      <p class="mb-0 line-clamp-3 text-base text-muted-foreground">
-        {{ summary }}
-      </p>
-    {% endif %}
+  {% set words = summary|striptags|trim|split(' ')|filter(word => word is not empty) %}
 
-    {% if author is not empty %}
-      <p class="mt-auto mb-0 pt-2 text-sm font-medium text-card-foreground">
-        {{ author }}
-      </p>
-    {% endif %}
+  <p class="mb-0 line-clamp-3 text-base text-muted-foreground">
+    {{ words|slice(0, 25)|join(' ') }}{{ words|length > 25 ? '…' : '' }}
+  </p>
+{% endif %}
   </div>
 </article>
