@@ -552,8 +552,53 @@
 
   /* Provide basic styles for views elements */
   .views-exposed-form {
-    @apply flex items-center gap-2;
-  }
+  @apply flex flex-wrap items-end gap-4;
+}
+
+/* Khusus untuk halaman carian berita. */
+.view-balai-berita-search .views-exposed-form .form-item {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+
+.view-balai-berita-search .views-exposed-form label {
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.view-balai-berita-search .views-exposed-form input[type="text"],
+.view-balai-berita-search .views-exposed-form input[type="search"],
+.view-balai-berita-search .views-exposed-form select {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #1f2937;
+}
+
+.view-balai-berita-search .views-exposed-form input:focus,
+.view-balai-berita-search .views-exposed-form select:focus {
+  border-color: #2563eb;
+  outline: 3px solid #dbeafe;
+  outline-offset: 1px;
+}
+
+.view-balai-berita-search .views-exposed-form select option {
+  background-color: #fff;
+  color: #1f2937;
+}
+
+.view-balai-berita-search .views-exposed-form .form-submit {
+  min-height: 48px;
+  padding: 10px 24px;
+  border-radius: 10px;
+}
+
+.view-balai-berita-search .view-filters {
+  margin-bottom: 24px;
+}
 
   .view-header {
     @apply pb-4 md:pb-6;
