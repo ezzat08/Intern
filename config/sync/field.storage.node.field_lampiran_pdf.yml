@@ -1,0 +1,20 @@
+uuid: 582386d5-cdd3-4e6d-9ad0-3cd8e63a7826
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.field_lampiran_pdf
+field_name: field_lampiran_pdf
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

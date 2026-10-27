@@ -1,0 +1,19 @@
+uuid: 8e2f4beb-7981-4d44-98a8-5a150b84797f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_kapsyen_gambar
+    - node.type.berita
+id: node.berita.field_kapsyen_gambar
+field_name: field_kapsyen_gambar
+entity_type: node
+bundle: berita
+label: 'Kapsyen Gambar'
+description: 'Masukkan penerangan ringkas bagi gambar utama berita.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

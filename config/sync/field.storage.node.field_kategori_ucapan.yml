@@ -1,0 +1,20 @@
+uuid: ac30339a-127c-4607-8206-e3f6dc56d5e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_kategori_ucapan
+field_name: field_kategori_ucapan
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

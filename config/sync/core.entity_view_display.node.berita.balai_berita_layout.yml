@@ -1,0 +1,187 @@
+uuid: 06a07c98-8986-4070-ad61-a6434bf4c7ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.berita.title
+    - core.entity_view_mode.node.balai_berita_layout
+    - field.field.node.berita.field_fail_keratan_akhbar
+    - field.field.node.berita.field_foto_album
+    - field.field.node.berita.field_gambar_utama
+    - field.field.node.berita.field_jenis_kandungan
+    - field.field.node.berita.field_kandungan_berita
+    - field.field.node.berita.field_kapsyen_gambar
+    - field.field.node.berita.field_kategori_berita
+    - field.field.node.berita.field_kategori_ucapan
+    - field.field.node.berita.field_lampiran_media
+    - field.field.node.berita.field_lampiran_pdf
+    - field.field.node.berita.field_pautan_asal_berita
+    - field.field.node.berita.field_ringkasan_berita
+    - field.field.node.berita.field_sumber_akhbar
+    - field.field.node.berita.field_sumber_penulis
+    - field.field.node.berita.field_tarikh_penerbitan_berita
+    - node.type.berita
+  module:
+    - layout_builder
+    - layout_discovery
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: Pengumuman
+          context_mapping: {  }
+        components:
+          c5eef13b-b18f-4b8f-9d8a-db022bde37ca:
+            uuid: c5eef13b-b18f-4b8f-9d8a-db022bde37ca
+            region: content
+            configuration:
+              id: 'field_block:node:berita:field_jenis_kandungan'
+              label: 'Jenis Kandungan'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          13adc3e0-94a4-4477-a75d-9cc32bbfd4d2:
+            uuid: 13adc3e0-94a4-4477-a75d-9cc32bbfd4d2
+            region: content
+            configuration:
+              id: 'field_block:node:berita:field_tarikh_penerbitan_berita'
+              label: 'Tarikh Penerbitan '
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: datetime_default
+                label: above
+                settings:
+                  timezone_override: ''
+                  format_type: tarikh_balai_berita
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          74cc37cd-b237-4451-8fc8-41f41f638462:
+            uuid: 74cc37cd-b237-4451-8fc8-41f41f638462
+            region: content
+            configuration:
+              id: 'field_block:node:berita:title'
+              label: 'Tajuk '
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                  link_rel: canonical
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: Pengumuman
+          context_mapping: {  }
+          column_widths: 75-25
+        components:
+          683af27e-cba9-46b7-8990-4591b884a6a2:
+            uuid: 683af27e-cba9-46b7-8990-4591b884a6a2
+            region: second
+            configuration:
+              id: 'field_block:node:berita:field_lampiran_pdf'
+              label: 'Lampiran PDF'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          f5016a73-468b-4792-828f-d0d53f6d3f14:
+            uuid: f5016a73-468b-4792-828f-d0d53f6d3f14
+            region: second
+            configuration:
+              id: 'field_block:node:berita:field_lampiran_media'
+              label: 'Lampiran Media'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          8148f6ed-193e-44b8-90cd-e7c728c4dbea:
+            uuid: 8148f6ed-193e-44b8-90cd-e7c728c4dbea
+            region: first
+            configuration:
+              id: 'field_block:node:berita:field_lampiran_pdf'
+              label: 'Lampiran PDF'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: above
+                settings:
+                  view_mode: 16_9_wide
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: node.berita.balai_berita_layout
+targetEntityType: node
+bundle: berita
+mode: balai_berita_layout
+content: {  }
+hidden:
+  field_fail_keratan_akhbar: true
+  field_foto_album: true
+  field_gambar_utama: true
+  field_jenis_kandungan: true
+  field_kandungan_berita: true
+  field_kapsyen_gambar: true
+  field_kategori_berita: true
+  field_kategori_ucapan: true
+  field_lampiran_media: true
+  field_lampiran_pdf: true
+  field_pautan_asal_berita: true
+  field_ringkasan_berita: true
+  field_sumber_akhbar: true
+  field_sumber_penulis: true
+  field_tarikh_penerbitan_berita: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

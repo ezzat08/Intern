@@ -1,0 +1,11 @@
+uuid: 3e64b0ce-d973-4bfb-91b0-1b54d95c504c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.balai_berita_layout
+label: 'Balai Berita Layout'
+description: null
+targetEntityType: node
+cache: true

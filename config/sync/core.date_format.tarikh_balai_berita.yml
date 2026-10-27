@@ -1,0 +1,8 @@
+uuid: 05097fa8-1780-4ce5-a3e3-afaf5eea707a
+langcode: en
+status: true
+dependencies: {  }
+id: tarikh_balai_berita
+label: 'Tarikh Balai Berita '
+locked: false
+pattern: 'd F Y'

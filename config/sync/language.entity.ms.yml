@@ -1,0 +1,9 @@
+uuid: ecf56cf1-afb1-470c-90a1-006d29a89696
+langcode: en
+status: true
+dependencies: {  }
+id: ms
+label: Malay
+direction: ltr
+weight: 1
+locked: false

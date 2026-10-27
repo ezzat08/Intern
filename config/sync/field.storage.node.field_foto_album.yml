@@ -1,0 +1,20 @@
+uuid: 668143bd-86f3-4cac-a05a-0a555e7df559
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.field_foto_album
+field_name: field_foto_album
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

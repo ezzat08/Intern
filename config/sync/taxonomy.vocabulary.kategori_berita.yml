@@ -1,0 +1,25 @@
+uuid: 356c686a-b2eb-4dd1-9f21-f1677949639d
+langcode: en
+status: true
+dependencies:
+  module:
+    - scheduler
+third_party_settings:
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    show_message_after_update: true
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+name: 'Kategori Berita'
+vid: kategori_berita
+description: 'Kategori berita rasmi Kerajaan Negeri Sembilan.'
+weight: 0
+new_revision: false

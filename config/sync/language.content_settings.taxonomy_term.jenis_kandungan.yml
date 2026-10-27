@@ -1,0 +1,18 @@
+uuid: c6f81baa-a72e-4834-92bf-ce8c2e9af01a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.jenis_kandungan
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.jenis_kandungan
+target_entity_type_id: taxonomy_term
+target_bundle: jenis_kandungan
+default_langcode: site_default
+language_alterable: false
