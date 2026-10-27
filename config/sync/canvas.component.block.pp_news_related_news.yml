@@ -1,0 +1,31 @@
+uuid: 7fe17b3e-d8cc-4749-9f34-4b30f2b8600f
+langcode: en
+status: true
+dependencies:
+  module:
+    - pp_news
+active_version: b57571ec4c735838
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: pp_news_related_news
+        label: 'Related Post'
+        label_display: '0'
+        provider: pp_news
+    fallback_metadata:
+      slot_definitions: null
+  86f2ed356818319d:
+    settings:
+      default_settings:
+        id: pp_news_related_news
+        label: 'PP News: Related News'
+        label_display: '0'
+        provider: pp_news
+    fallback_metadata:
+      slot_definitions: null
+label: 'Related Post'
+id: block.pp_news_related_news
+provider: pp_news
+source: block
+source_local_id: pp_news_related_news

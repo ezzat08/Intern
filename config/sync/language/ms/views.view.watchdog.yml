@@ -1,0 +1,47 @@
+label: Watchdog
+description: 'Mesej-mesej log terbaru'
+display:
+  default:
+    display_title: Lalai
+    display_options:
+      title: 'Mesej-mesej log terbaru'
+      fields:
+        nothing:
+          admin_label: Ikon
+        severity:
+          label: Keterukan
+        type:
+          label: Jenis
+        timestamp:
+          label: Tarikh
+        message:
+          label: Mesej
+        name:
+          label: Pengguna
+        link:
+          label: Operasi-operasi
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Item per halaman'
+            items_per_page_options_all_label: '- Semua -'
+      exposed_form:
+        options:
+          submit_button: Tapis
+          reset_button_label: 'Set semula'
+          exposed_sorts_label: 'Susun mengikuti'
+          sort_asc_label: Menaik
+          sort_desc_label: Menurun
+      empty:
+        area:
+          admin_label: 'Tiada mesej log tersedia ada.'
+          content: 'Tiada mesej log tersedia ada.'
+      filters:
+        type:
+          expose:
+            label: Jenis
+        severity:
+          expose:
+            label: Keterukan
+  page:
+    display_title: Halaman

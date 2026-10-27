@@ -1,0 +1,11 @@
+uuid: a09420e5-91bc-493b-9a66-b2c02b4707bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.pp_news_related_news
+name: Custom
+configEntityTypeId: component
+weight: 0
+items:
+  - block.pp_news_related_news

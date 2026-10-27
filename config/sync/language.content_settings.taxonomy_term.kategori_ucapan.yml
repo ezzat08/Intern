@@ -1,0 +1,18 @@
+uuid: 3d62a4b9-fdc1-4e15-ac69-00f84eb588cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.kategori_ucapan
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.kategori_ucapan
+target_entity_type_id: taxonomy_term
+target_bundle: kategori_ucapan
+default_langcode: site_default
+language_alterable: false
