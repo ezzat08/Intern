@@ -1,0 +1,19 @@
+uuid: f0202ae7-8ac7-4aca-9c3a-bf2f8d7002c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ringkasan_berita
+    - node.type.berita
+id: node.berita.field_ringkasan_berita
+field_name: field_ringkasan_berita
+entity_type: node
+bundle: berita
+label: 'Pengenalan '
+description: 'Masukkan ringkasan pendek berita untuk dipaparkan dalam senarai berita dan hasil carian.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

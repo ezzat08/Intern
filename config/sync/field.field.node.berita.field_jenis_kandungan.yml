@@ -1,0 +1,29 @@
+uuid: c85fabd9-0426-444f-99a7-6e6a68f38c72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jenis_kandungan
+    - node.type.berita
+    - taxonomy.vocabulary.jenis_kandungan
+id: node.berita.field_jenis_kandungan
+field_name: field_jenis_kandungan
+entity_type: node
+bundle: berita
+label: 'Jenis Kandungan'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      jenis_kandungan: jenis_kandungan
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

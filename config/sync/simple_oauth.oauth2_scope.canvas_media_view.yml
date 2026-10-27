@@ -1,0 +1,27 @@
+uuid: bd76036e-a3dd-4c9b-9ee4-b2469b82e665
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - canvas_oauth
+_core:
+  default_config_hash: V_4fttnNfYwcR8XJyuAIzmEqwN5vyKxQvjM3Vy9YR4c
+id: canvas_media_view
+name: 'canvas:media:view'
+description: 'Drupal Canvas: View Media'
+grant_types:
+  authorization_code:
+    status: true
+    description: 'Authorization code access for viewing media'
+  refresh_token:
+    status: true
+    description: 'Refresh token access for viewing media'
+  client_credentials:
+    status: true
+    description: 'Client credentials access for viewing media'
+umbrella: false
+parent: null
+granularity_id: permission
+granularity_configuration:
+  permission: 'view media'

@@ -1,0 +1,61 @@
+label: Orang
+display:
+  default:
+    display_title: Lalai
+    display_options:
+      title: Orang
+      fields:
+        name:
+          label: 'Nama pengguna'
+        status:
+          label: Status
+          settings:
+            format_custom_false: Disekat
+            format_custom_true: Aktif
+        roles_target_id:
+          label: Peranan
+        created:
+          label: 'Ahli sejak'
+        access:
+          label: 'Akses terakhir'
+        operations:
+          label: Operasi-operasi
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Item per halaman'
+            items_per_page_options_all_label: '- Semua -'
+      exposed_form:
+        options:
+          submit_button: Tapis
+          reset_button_label: 'Set semula'
+          exposed_sorts_label: 'Susun mengikuti'
+          sort_asc_label: Menaik
+          sort_desc_label: Menurun
+      empty:
+        area_text_custom:
+          content: 'Tiada orang tersedia ada.'
+      filters:
+        status:
+          group_info:
+            label: Status
+            group_items:
+              1:
+                title: Aktif
+              2:
+                title: Disekat
+        roles_target_id:
+          expose:
+            label: Peranan
+        permission:
+          expose:
+            label: Keizinan
+      use_more_text: lagi
+  page_1:
+    display_title: Halaman
+    display_options:
+      menu:
+        title: Senarai
+      tab_options:
+        title: Orang
+        description: 'Uruskan akaun pengguna, peranan, dan keizinan.'

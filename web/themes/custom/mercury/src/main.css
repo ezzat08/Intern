@@ -591,4 +591,11 @@
   .heading-responsive-xl {
     @apply text-lg md:text-xl; /* H5 */
   }
+  #block-mercury-ppnewsrelatednews {
+  @apply container mx-auto px-4;
+}
+
+#block-mercury-ppnewsrelatednews > h2 {
+  @apply mb-6;
+}
 }

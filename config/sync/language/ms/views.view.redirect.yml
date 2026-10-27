@@ -1,0 +1,34 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Tapis
+          reset_button_label: 'Set semula'
+          exposed_sorts_label: 'Susun mengikuti'
+          sort_asc_label: Menaik
+          sort_desc_label: Menurun
+      pager:
+        options:
+          tags:
+            previous: '‹ sebelum'
+            next: 'berikut ›'
+            first: '« pertama'
+            last: 'terakhir »'
+          expose:
+            items_per_page_label: 'Item per halaman'
+            items_per_page_options_all_label: '- Semua -'
+      fields:
+        redirect_source__path:
+          label: Daripada
+        created:
+          label: Diciptakan
+      filters:
+        redirect_source__path:
+          expose:
+            label: Daripada
+        redirect_redirect__uri:
+          expose:
+            label: Kepada
+  page_1:
+    display_title: Halaman

@@ -1,0 +1,29 @@
+uuid: eef09c6b-6657-4222-9d2b-105be70b3e6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lampiran_pdf
+    - media.type.document
+    - node.type.berita
+id: node.berita.field_lampiran_pdf
+field_name: field_lampiran_pdf
+entity_type: node
+bundle: berita
+label: 'Lampiran PDF'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

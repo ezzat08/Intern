@@ -43,7 +43,7 @@
     </div>
   {% endif %}
   {% if exposed %}
-    <div class="view-filters">
+    <div class="view-filters mb-4">
       {{ exposed }}
     </div>
   {% endif %}
@@ -55,8 +55,7 @@
 
   {% block view_content %}
     {% if rows %}
-      <div class="view-content">
-        {{ rows }}
+      <div class="view-content [&_.views-view-responsive-grid\_\_item-inner]:h-full">        {{ rows }}
       </div>
     {% elseif empty %}
       <div class="view-empty">

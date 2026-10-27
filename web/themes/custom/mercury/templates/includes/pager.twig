@@ -146,6 +146,14 @@
           </span>
         </li>
       {% endif %}
+      {% if items.pages is empty %}
+  <li class="flex h-10 min-w-10 items-center justify-center font-semibold">
+    <span aria-current="page">
+      <span class="sr-only">{{ 'Page'|t }}</span>
+      {{ items.current }}
+    </span>
+  </li>
+{% endif %}
       {# Print next item if we are not on the last page. #}
       {% if items.next %}
         <li class="pager__item pager__item--next">

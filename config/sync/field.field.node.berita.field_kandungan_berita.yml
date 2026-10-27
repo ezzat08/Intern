@@ -1,0 +1,24 @@
+uuid: debdffab-e593-4a49-916d-9c5ef39f9999
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_kandungan_berita
+    - filter.format.content_format
+    - node.type.berita
+  module:
+    - text
+id: node.berita.field_kandungan_berita
+field_name: field_kandungan_berita
+entity_type: node
+bundle: berita
+label: 'Kandungan Berita'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - content_format
+field_type: text_long

@@ -1,0 +1,63 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Tapis
+          reset_button_label: 'Set semula'
+          exposed_sorts_label: 'Susun mengikuti'
+          sort_asc_label: Menaik
+          sort_desc_label: Menurun
+      pager:
+        options:
+          tags:
+            previous: '‹ sebelum'
+            next: 'berikut ›'
+            first: '« pertama'
+            last: 'terakhir »'
+      fields:
+        node_bulk_form:
+          action_title: Tindakan
+        title:
+          label: Tajuk
+        name:
+          label: Pengarang
+        status:
+          label: Status
+          settings:
+            format_custom_true: Diterbitkan
+            format_custom_false: 'Belum diterbitkan'
+        operations:
+          label: Operasi-operasi
+      filters:
+        title:
+          expose:
+            label: Tajuk
+        type:
+          expose:
+            label: 'Jenis kandungan'
+        status:
+          expose:
+            label: Status
+          group_info:
+            group_items:
+              1:
+                title: Diterbitkan
+              2:
+                title: 'Belum diterbitkan'
+        langcode:
+          expose:
+            label: Bahasa
+  overview:
+    display_options:
+      tab_options:
+        title: Kandungan
+  user_page:
+    display_options:
+      tab_options:
+        title: Kandungan
+      arguments:
+        uid:
+          exception:
+            title: Semua
+    display_title: Pengguna

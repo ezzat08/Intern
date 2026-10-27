@@ -1,0 +1,15 @@
+uuid: 2349eb56-a3a1-4b55-ae05-54bf469f5fe7
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.js.button
+    - canvas.component.sdc.navigation.message
+    - canvas.component.sdc.navigation.title
+name: Other
+configEntityTypeId: component
+weight: 0
+items:
+  - js.button
+  - sdc.navigation.message
+  - sdc.navigation.title
