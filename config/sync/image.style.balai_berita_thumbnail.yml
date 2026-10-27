@@ -1,0 +1,15 @@
+uuid: 7a5f84d5-8485-49f1-8b61-d1ee347dbd80
+langcode: en
+status: true
+dependencies: {  }
+name: balai_berita_thumbnail
+label: 'Balai Berita Thumbnail'
+effects:
+  e794ef99-b5eb-4398-b8da-9bc0ec3b5dbc:
+    uuid: e794ef99-b5eb-4398-b8da-9bc0ec3b5dbc
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 250
+      anchor: center-center
