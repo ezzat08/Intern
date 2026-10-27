@@ -25,12 +25,12 @@
       <a href="{{ url }}" class="after:absolute after:inset-0 after:content-[''] focus:outline-none">{{ title }}</a>
     </h2>
 
-    {% if summary is not empty %}
+    {#{% if summary is not empty %}
   {% set words = summary|striptags|trim|split(' ')|filter(word => word is not empty) %}
 
   <p class="mb-0 line-clamp-3 text-base text-muted-foreground">
     {{ words|slice(0, 25)|join(' ') }}{{ words|length > 25 ? '…' : '' }}
   </p>
-{% endif %}
+{% endif %}#}
   </div>
 </article>
