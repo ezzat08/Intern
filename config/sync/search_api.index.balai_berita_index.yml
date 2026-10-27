@@ -11,6 +11,7 @@ dependencies:
     - field.storage.node.field_ringkasan_berita
     - field.storage.node.field_sumber_akhbar
     - field.storage.node.field_sumber_penulis
+    - field.storage.node.field_tarikh_penerbitan_berita
     - search_api.server.n9_database_search
   module:
     - node
@@ -85,6 +86,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_sumber_penulis
+  field_tarikh_penerbitan_berita:
+    label: 'Tarikh Penerbitan '
+    datasource_id: 'entity:node'
+    property_path: field_tarikh_penerbitan_berita
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_tarikh_penerbitan_berita
   name:
     label: 'Kategori Berita » Taxonomy term » Name'
     datasource_id: 'entity:node'
