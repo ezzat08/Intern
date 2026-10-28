@@ -157,4 +157,5 @@ content:
     region: content
 hidden:
   field_foto_album: true
+  langcode: true
   search_api_excerpt: true

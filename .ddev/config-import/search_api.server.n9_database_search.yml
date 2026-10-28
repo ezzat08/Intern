@@ -1,0 +1,15 @@
+uuid: e1b54259-f109-40f1-b5c8-37443092d2ab
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: n9_database_search
+name: 'N9 Database Search'
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 3
+  matching: prefix
+  phrase: disabled

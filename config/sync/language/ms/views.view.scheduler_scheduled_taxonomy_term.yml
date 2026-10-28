@@ -1,0 +1,47 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Tapis
+          reset_button_label: 'Set semula'
+          exposed_sorts_label: 'Susun mengikuti'
+          sort_asc_label: Menaik
+          sort_desc_label: Menurun
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Item per halaman'
+            items_per_page_options_all_label: '- Semua -'
+          tags:
+            previous: '‹ sebelum'
+            next: 'berikut ›'
+            first: '« pertama'
+            last: 'terakhir »'
+      fields:
+        taxonomy_term_bulk_form:
+          action_title: Tindakan
+        name:
+          label: Istilah
+        vid:
+          label: 'Kosa kata'
+        status:
+          label: Status
+          settings:
+            format_custom_true: Diterbitkan
+            format_custom_false: 'Belum diterbitkan'
+        operations:
+          label: Operasi-operasi
+      filters:
+        vid:
+          expose:
+            label: 'Kosa kata'
+        status:
+          expose:
+            label: Status
+          group_info:
+            group_items:
+              1:
+                title: Diterbitkan
+              2:
+                title: 'Belum diterbitkan'

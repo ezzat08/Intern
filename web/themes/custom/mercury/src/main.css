@@ -303,10 +303,8 @@
 
   /* MYDS box shadows (shadow-button, shadow-card, shadow-context-menu). */
   --shadow-button: 0px 1px 3px 0px rgba(0, 0, 0, 0.07);
-  --shadow-card:
-    0px 2px 6px 0px rgba(0, 0, 0, 0.05), 0px 6px 24px 0px rgba(0, 0, 0, 0.05);
-  --shadow-context-menu:
-    0px 2px 6px 0px rgba(0, 0, 0, 0.05), 0px 12px 50px 0px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0px 2px 6px 0px rgba(0, 0, 0, 0.05), 0px 6px 24px 0px rgba(0, 0, 0, 0.05);
+  --shadow-context-menu: 0px 2px 6px 0px rgba(0, 0, 0, 0.05), 0px 12px 50px 0px rgba(0, 0, 0, 0.1);
 
   /* MYDS heading font, exposed under its own component-library utility name
      (font-heading) alongside Mercury's font-sans, which already points at the
@@ -480,7 +478,7 @@
 
   .form-submit,
   input.button {
-    @apply cursor-pointer rounded-lg bg-primary px-5 py-2 text-base text-primary-foreground;
+    @apply cursor-pointer rounded-lg bg-primary px-500 py-2 text-base text-primary-foreground;
   }
 
   .form-submit:hover,
@@ -554,8 +552,53 @@
 
   /* Provide basic styles for views elements */
   .views-exposed-form {
-    @apply flex items-center gap-2;
-  }
+  @apply flex flex-wrap items-end gap-4;
+}
+
+/* Khusus untuk halaman carian berita. */
+.view-balai-berita-search .views-exposed-form .form-item {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+
+.view-balai-berita-search .views-exposed-form label {
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.view-balai-berita-search .views-exposed-form input[type="text"],
+.view-balai-berita-search .views-exposed-form input[type="search"],
+.view-balai-berita-search .views-exposed-form select {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #1f2937;
+}
+
+.view-balai-berita-search .views-exposed-form input:focus,
+.view-balai-berita-search .views-exposed-form select:focus {
+  border-color: #2563eb;
+  outline: 3px solid #dbeafe;
+  outline-offset: 1px;
+}
+
+.view-balai-berita-search .views-exposed-form select option {
+  background-color: #fff;
+  color: #1f2937;
+}
+
+.view-balai-berita-search .views-exposed-form .form-submit {
+  min-height: 48px;
+  padding: 10px 24px;
+  border-radius: 10px;
+}
+
+.view-balai-berita-search .view-filters {
+  margin-bottom: 24px;
+}
 
   .view-header {
     @apply pb-4 md:pb-6;
@@ -593,4 +636,11 @@
   .heading-responsive-xl {
     @apply text-lg md:text-xl; /* H5 */
   }
+  #block-mercury-ppnewsrelatednews {
+  @apply container mx-auto px-4;
+}
+
+#block-mercury-ppnewsrelatednews > h2 {
+  @apply mb-6;
+}
 }

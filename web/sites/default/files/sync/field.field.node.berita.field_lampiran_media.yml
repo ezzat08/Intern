@@ -13,7 +13,7 @@ bundle: berita
 label: 'Lampiran Media'
 description: 'Pilih atau muat naik bahan media tambahan yang boleh dimuat turun oleh pengguna.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

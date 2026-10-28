@@ -1,0 +1,19 @@
+uuid: bf42384a-61c9-4769-a3b0-0a53b80641d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_kandungan_berita
+field_name: field_kandungan_berita
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

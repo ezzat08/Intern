@@ -1,0 +1,25 @@
+uuid: 1d739cf5-19bd-406f-924a-dbe999b2d53b
+langcode: en
+status: true
+dependencies:
+  module:
+    - pp_news
+    - system
+  theme:
+    - mercury
+id: mercury_ppnewsrelatednews
+theme: mercury
+region: footer
+weight: 0
+provider: null
+plugin: pp_news_related_news
+settings:
+  id: pp_news_related_news
+  label: 'PP News: Related News'
+  label_display: visible
+  provider: pp_news
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/carian-berita\r\n/balai-berita"

@@ -6,7 +6,14 @@ dependencies:
     - field.storage.media.field_media_svg_image
     - media.type.svg_image
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 _core:
   default_config_hash: zeCRqFlYGhwWjUDHIiANbncreBJ1ADyW-VdyccSUBTs
 id: media.svg_image.field_media_svg_image

@@ -1,0 +1,33 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Tapis
+          reset_button_label: 'Set semula'
+          exposed_sorts_label: 'Susun mengikuti'
+          sort_asc_label: Menaik
+          sort_desc_label: Menurun
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Item per halaman'
+            items_per_page_options_all_label: '- Semua -'
+      fields:
+        path:
+          label: Laluan
+        count:
+          label: Bilangan
+        langcode:
+          label: Bahasa
+        redirect_404_operations:
+          label: Operasi-operasi
+      filters:
+        path:
+          expose:
+            label: Laluan
+        langcode:
+          expose:
+            label: Bahasa
+  page_1:
+    display_title: Halaman

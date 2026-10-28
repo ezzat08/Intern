@@ -1,0 +1,73 @@
+uuid: 139d5a3c-801d-4ad3-b8ce-9b67ba166290
+langcode: en
+status: true
+dependencies: {  }
+machineName: button
+name: Button
+required:
+  - text
+props:
+  text:
+    type: string
+    title: Text
+    examples:
+      - 'Click me'
+  variant:
+    type: string
+    enum:
+      - default-outline
+      - default-ghost
+      - danger-fill
+      - danger-outline
+      - danger-ghost
+      - primary-fill
+      - primary-outline
+      - primary-ghost
+    'meta:enum':
+      default-outline: 'Default Outline'
+      default-ghost: 'Default Ghost'
+      danger-fill: 'Danger Fill'
+      danger-outline: 'Danger Outline'
+      danger-ghost: 'Danger Ghost'
+      primary-fill: 'Primary Fill'
+      primary-outline: 'Primary Outline'
+      primary-ghost: 'Primary Ghost'
+    title: Variant
+    examples:
+      - primary-fill
+  size:
+    type: string
+    enum:
+      - small
+      - medium
+      - large
+    'meta:enum':
+      small: Small
+      medium: Medium
+      large: Large
+    title: Size
+    examples:
+      - medium
+slots: {  }
+js:
+  original: |
+    import { Button as MydsButton } from '@govtechmy/myds-react/button';
+
+    const Button = ({ text, variant, size }) => (
+      <MydsButton variant={variant} size={size}>
+        {text}
+      </MydsButton>
+    );
+
+    export default Button;
+  compiled: |
+    import { jsx } from "react/jsx-runtime";
+    import { Button as Button$1 } from "@govtechmy/myds-react/button";
+    const Button = ({ text, variant, size }) => /* @__PURE__ */ jsx(Button$1, { variant, size, children: text });
+    export {
+      Button as default
+    };
+css:
+  original: ''
+  compiled: ''
+dataDependencies: {  }

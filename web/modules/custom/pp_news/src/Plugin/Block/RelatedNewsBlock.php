@@ -10,13 +10,15 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\node\Entity\Node;
 use Drupal\pp_news\Service\RelatedNewsService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Provides a block displaying related news articles.
  *
  * @Block(
  *   id = "pp_news_related_news",
- *   admin_label = @Translation("PP News: Related News"),
+ *   admin_label = @Translation("Related Post"),
  *   category = @Translation("Custom")
  * )
  */
@@ -33,6 +35,8 @@ class RelatedNewsBlock extends BlockBase implements ContainerFactoryPluginInterf
     protected RouteMatchInterface $routeMatch,
     protected ConfigFactoryInterface $configFactory,
     protected DateFormatterInterface $dateFormatter,
+    protected EntityTypeManagerInterface $entityTypeManager,
+    protected RequestStack $requestStack,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
@@ -54,6 +58,8 @@ class RelatedNewsBlock extends BlockBase implements ContainerFactoryPluginInterf
       $container->get('current_route_match'),
       $container->get('config.factory'),
       $container->get('date.formatter'),
+      $container->get('entity_type.manager'),
+      $container->get('request_stack'),
     );
   }
 
@@ -66,14 +72,17 @@ class RelatedNewsBlock extends BlockBase implements ContainerFactoryPluginInterf
 
     // Try the request attributes if the route parameter isn't a Node.
     if (!$current_node instanceof Node) {
-      $request_node = \Drupal::request()->attributes->get('node');
+      $request = $this->requestStack->getCurrentRequest();
+$request_node = $request?->attributes->get('node');
 
-      if ($request_node instanceof Node) {
-        $current_node = $request_node;
-      }
-      elseif (is_numeric($request_node)) {
-        $current_node = Node::load($request_node);
-      }
+if ($request_node instanceof Node) {
+  $current_node = $request_node;
+}
+elseif (is_numeric($request_node)) {
+  $current_node = $this->entityTypeManager
+    ->getStorage('node')
+    ->load($request_node);
+}
     }
 
     // Only display related news on a Berita article page.
@@ -187,6 +196,7 @@ class RelatedNewsBlock extends BlockBase implements ContainerFactoryPluginInterf
 
     return [
       '#theme' => 'pp_news_card_list',
+      '#title' => $this->t('Related Post'),
       '#items' => $items,
       '#attached' => [
         'library' => [

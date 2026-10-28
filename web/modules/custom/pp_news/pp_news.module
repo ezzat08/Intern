@@ -10,6 +10,7 @@ function pp_news_theme($existing, $type, $theme, $path): array {
     'pp_news_card_list' => [
       'variables' => [
         'items' => [],
+        'title' => '',
       ],
       'template' => 'pp-news-card-list',
       'path' => $path . '/templates',
@@ -25,22 +26,21 @@ function pp_news_theme($existing, $type, $theme, $path): array {
 /**
  * Implements hook_form_alter().
  */
+
+/**
+ * Implements hook_form_alter().
+ */
 function pp_news_form_alter(array &$form, FormStateInterface $form_state, $form_id): void {
   if ($form_id !== 'node_berita_edit_form') {
     return;
   }
 
-  if (isset($form['field_kategori_berita'])) {
-    $form['field_kategori_berita']['widget']['#prefix'] = '<p>PP News debug: Category field found.</p>';
+  if (isset($form['field_kategori_berita']['widget'])) {
     $form['field_kategori_berita']['widget']['#description'] = t(
       'Select one or more categories. Other published news articles sharing at least one category may appear in the Related News section.'
     );
   }
-  else {
-    \Drupal::messenger()->addWarning(t(
-      'PP News debug: field_kategori_berita was not found in the form.'
-    ));
-  }
 }
+
 
 

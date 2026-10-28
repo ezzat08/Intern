@@ -1,23 +1,32 @@
-<div class="pp-news-list">
-  {% for item in items %}
-    <article class="pp-news-item">
+<section class="pp-news">
+  <div class="pp-news-carousel">
+    <button
+      class="pp-news-carousel__arrow pp-news-carousel__arrow--prev"
+      type="button"
+      aria-label="{{ 'Previous related news'|t }}"
+    >‹</button>
 
-      {% if item.image %}
-        <div class="pp-news-item__thumbnail">
-          {{ item.image }}
+    <div class="pp-news-carousel__track">
+      {% for item in items %}
+        <div class="pp-news-carousel__item flex [&>article]:h-auto [&>article]:w-full">
+          {{ include('mercury:news-card', {
+            title: item.title,
+            url: item.url,
+            summary: item.excerpt|default(''),
+            date_iso: item.date_iso|default(''),
+            date_label: item.date|default(''),
+            category: item.category|default(''),
+            author: item.author|default(''),
+            image: item.image
+          }, with_context: false) }}
         </div>
-      {% endif %}
+      {% endfor %}
+    </div>
 
-      <div class="pp-news-item__content">
-        {% if item.date %}
-          <time class="pp-news-item__date">{{ item.date }}</time>
-        {% endif %}
-
-        <h3 class="pp-news-item__title">
-          <a href="{{ item.url }}">{{ item.title }}</a>
-        </h3>
-      </div>
-
-    </article>
-  {% endfor %}
-</div>
+    <button
+      class="pp-news-carousel__arrow pp-news-carousel__arrow--next"
+      type="button"
+      aria-label="{{ 'Next related news'|t }}"
+    >›</button>
+  </div>
+</section>

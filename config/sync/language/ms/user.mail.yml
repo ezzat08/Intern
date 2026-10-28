@@ -1,0 +1,2 @@
+register_admin_created:
+  subject: 'Seorang pentadbir telah mencipta satu akaun untuk anda di [site:name]'

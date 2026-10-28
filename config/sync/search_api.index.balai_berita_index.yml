@@ -1,0 +1,153 @@
+uuid: f650c59f-70ca-4f33-9298-23fa73f9a2fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jenis_kandungan
+    - field.storage.node.field_kandungan_berita
+    - field.storage.node.field_kapsyen_gambar
+    - field.storage.node.field_kategori_berita
+    - field.storage.node.field_kategori_ucapan
+    - field.storage.node.field_ringkasan_berita
+    - field.storage.node.field_sumber_akhbar
+    - field.storage.node.field_sumber_penulis
+    - field.storage.node.field_tarikh_penerbitan_berita
+    - search_api.server.n9_database_search
+  module:
+    - node
+    - taxonomy
+id: balai_berita_index
+name: 'Balai Berita Index'
+description: 'Search index untuk kandungan Balai Berita'
+read_only: false
+field_settings:
+  field_jenis_kandungan:
+    label: 'Jenis Kandungan'
+    datasource_id: 'entity:node'
+    property_path: field_jenis_kandungan
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_jenis_kandungan
+  field_kandungan_berita:
+    label: 'Kandungan Berita'
+    datasource_id: 'entity:node'
+    property_path: field_kandungan_berita
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_kandungan_berita
+  field_kapsyen_gambar:
+    label: 'Kapsyen Gambar'
+    datasource_id: 'entity:node'
+    property_path: field_kapsyen_gambar
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_kapsyen_gambar
+  field_kategori_berita:
+    label: 'Kategori Berita'
+    datasource_id: 'entity:node'
+    property_path: field_kategori_berita
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_kategori_berita
+  field_kategori_ucapan:
+    label: 'Kategori Ucapan'
+    datasource_id: 'entity:node'
+    property_path: field_kategori_ucapan
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_kategori_ucapan
+  field_ringkasan_berita:
+    label: 'Pengenalan '
+    datasource_id: 'entity:node'
+    property_path: field_ringkasan_berita
+    type: text
+    boost: 2.0
+    dependencies:
+      config:
+        - field.storage.node.field_ringkasan_berita
+  field_sumber_akhbar:
+    label: 'Sumber Akhbar'
+    datasource_id: 'entity:node'
+    property_path: field_sumber_akhbar
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_sumber_akhbar
+  field_sumber_penulis:
+    label: Sumber/Penulis
+    datasource_id: 'entity:node'
+    property_path: field_sumber_penulis
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_sumber_penulis
+  field_tarikh_penerbitan_berita:
+    label: 'Tarikh Penerbitan '
+    datasource_id: 'entity:node'
+    property_path: field_tarikh_penerbitan_berita
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_tarikh_penerbitan_berita
+  name:
+    label: 'Kategori Berita » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_kategori_berita:entity:name'
+    type: text
+    boost: 2.0
+    dependencies:
+      config:
+        - field.storage.node.field_kategori_berita
+      module:
+        - taxonomy
+  name_1:
+    label: 'Jenis Kandungan » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_jenis_kandungan:entity:name'
+    type: text
+    boost: 2.0
+    dependencies:
+      config:
+        - field.storage.node.field_jenis_kandungan
+      module:
+        - taxonomy
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: 5.0
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - berita
+    languages:
+      default: false
+      selected:
+        - en
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  custom_value: {  }
+  entity_type: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: lifo
+options:
+  cron_limit: 50
+  delete_on_fail: true
+  index_directly: true
+  track_changes_in_references: true
+server: n9_database_search
