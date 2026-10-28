@@ -7,6 +7,20 @@
 /web/profiles/contrib
 /web/themes/contrib
 
+# Server settings file
+/web/sites/*/settings.local.php
+
+# Node modules
+node_modules/
+/web/themes/custom/mercury/node_modules/
+
+# Database dumps & exports
+*.sql.gz
+/db/
+/export/
+
+/web/sites/*/files
+
 # macOS
 .DS_Store
 .AppleDouble
@@ -14,6 +28,8 @@
 ._*
 .Spotlight-V100
 .Trashes
+Thumbs.db
+.vscode/
 
 # Windows
 Thumbs.db
