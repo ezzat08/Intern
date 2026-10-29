@@ -1,0 +1,29 @@
+{{ attach_library('pp_news/card_list') }}
+
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+
+<section class="pp-news">
+  <div class="pp-news-carousel">
+    <button
+      class="pp-news-carousel__arrow pp-news-carousel__arrow--prev"
+      type="button"
+      aria-label="{{ 'Previous related news'|t }}"
+    >‹</button>
+
+    <div class="pp-news-carousel__track">
+      {% for row in rows %}
+        <div {{ row.attributes.addClass('views-row', 'pp-news-carousel__item') }}>
+          {{ row.content }}
+        </div>
+      {% endfor %}
+    </div>
+
+    <button
+      class="pp-news-carousel__arrow pp-news-carousel__arrow--next"
+      type="button"
+      aria-label="{{ 'Next related news'|t }}"
+    >›</button>
+  </div>
+</section>

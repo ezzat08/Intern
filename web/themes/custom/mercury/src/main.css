@@ -644,3 +644,33 @@
   @apply mb-6;
 }
 }
+
+/* Samakan tinggi kad dalam carousel View berkaitan. */
+.view-berkaitan .pp-news-carousel__item {
+  display: flex;
+}
+
+.view-berkaitan .pp-news-carousel__item > article {
+  width: 100%;
+  height: auto;
+}
+
+.view-berkaitan .pp-news-carousel__item article p.line-clamp-3 {
+  display: none;
+}
+
+/* Selaraskan tajuk Berkaitan dengan kad carousel. */
+#block-mercury-views-block-berkaitan-block-1 > h2 {
+  box-sizing: border-box;
+  width: calc(100% - 2.5rem);
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (max-width: 768px) {
+  #block-mercury-views-block-berkaitan-block-1 > h2 {
+    width: 100%;
+    padding-inline: 0;
+  }
+}

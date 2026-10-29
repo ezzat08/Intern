@@ -11,6 +11,7 @@ dependencies:
     - field.storage.node.field_ringkasan_berita
     - field.storage.node.field_sumber_akhbar
     - field.storage.node.field_sumber_penulis
+    - field.storage.node.field_tag_berita
     - field.storage.node.field_tarikh_penerbitan_berita
     - search_api.server.n9_database_search
   module:
@@ -124,6 +125,16 @@ field_settings:
         - field.storage.node.field_jenis_kandungan
       module:
         - taxonomy
+  name_2:
+    label: 'Tag Berita » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_tag_berita:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_tag_berita
+      module:
+        - taxonomy
   title:
     label: Title
     datasource_id: 'entity:node'
@@ -160,6 +171,7 @@ processor_settings:
       - field_sumber_penulis
       - name
       - name_1
+      - name_2
       - title
   language_with_fallback: {  }
   rendered_item: {  }
