@@ -297,7 +297,7 @@ display:
           uses_fields: false
           columns: 3
           cell_min_width: 100
-          grid_gutter: 10
+          grid_gutter: 32
           alignment: horizontal
       row:
         type: search_api
