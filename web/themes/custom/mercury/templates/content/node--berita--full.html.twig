@@ -6,6 +6,9 @@
  * node--berita--full.html.twig (rather than node--news--full.html.twig).
  */
 #}
+{# {{ dd(news_card) }}
+ #}
+ {{ drupal_field('field_image', 'node', 1) }}
 <article {{ attributes.addClass('news-detail') }}>
   <header class="container mx-auto max-w-4xl px-5 pt-6 pb-8 md:px-8 md:pt-10 md:pb-12">
     <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted-foreground md:text-base">
@@ -66,7 +69,7 @@
   </div>
 </article>
 
-{#{% if related_news is not empty %}
+{# {% if related_news is not empty %}
   <section class="border-t border-border bg-muted/40 py-10 md:py-14" aria-labelledby="related-news-title">
     <div class="container mx-auto px-5 md:px-8">
       <h2 id="related-news-title" class="mb-6 text-3xl font-semibold md:mb-8 md:text-4xl">{{ 'Berita Berkaitan'|t }}</h2>
@@ -77,4 +80,4 @@
       </div>
     </div>
   </section>
-{% endif %}#}
+{% endif %} #}

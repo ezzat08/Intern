@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.berita.field_ringkasan_berita
     - field.field.node.berita.field_sumber_akhbar
     - field.field.node.berita.field_sumber_penulis
+    - field.field.node.berita.field_tag_berita
     - field.field.node.berita.field_tarikh_penerbitan_berita
     - node.type.berita
   module:
@@ -140,6 +141,14 @@ content:
       link_rel: canonical
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_tag_berita:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 15
     region: content
   field_tarikh_penerbitan_berita:
     type: datetime_default

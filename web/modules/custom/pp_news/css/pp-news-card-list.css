@@ -1,3 +1,11 @@
+/* Align the existing block heading with the carousel without a Twig override. */
+div:has(> .pp-news) > h2 {
+  box-sizing: border-box;
+  width: calc(100% - 2.5rem);
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
 
 .pp-news {
   padding: 2.5rem 1.25rem;
@@ -67,6 +75,11 @@
 
 /* Tablet and mobile */
 @media (max-width: 768px) {
+  div:has(> .pp-news) > h2 {
+    width: 100%;
+    padding-inline: 0;
+  }
+
   .pp-news {
     padding-right: 0;
     padding-left: 0;

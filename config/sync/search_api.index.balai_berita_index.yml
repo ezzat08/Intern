@@ -94,6 +94,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_tarikh_penerbitan_berita
+  field_tarikh_penerbitan_berita_1:
+    label: 'Tarikh Penerbitan '
+    datasource_id: 'entity:node'
+    property_path: field_tarikh_penerbitan_berita
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_tarikh_penerbitan_berita
   name:
     label: 'Kategori Berita » Taxonomy term » Name'
     datasource_id: 'entity:node'
@@ -140,6 +148,19 @@ processor_settings:
   aggregated_field: {  }
   custom_value: {  }
   entity_type: {  }
+  ignorecase:
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+    all_fields: true
+    fields:
+      - field_kandungan_berita
+      - field_kapsyen_gambar
+      - field_ringkasan_berita
+      - field_sumber_penulis
+      - name
+      - name_1
+      - title
   language_with_fallback: {  }
   rendered_item: {  }
 tracker_settings:

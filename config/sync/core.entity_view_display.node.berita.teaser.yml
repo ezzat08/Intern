@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.berita.field_ringkasan_berita
     - field.field.node.berita.field_sumber_akhbar
     - field.field.node.berita.field_sumber_penulis
+    - field.field.node.berita.field_tag_berita
     - field.field.node.berita.field_tarikh_penerbitan_berita
     - node.type.berita
   module:
@@ -163,5 +164,6 @@ content:
     region: content
 hidden:
   field_foto_album: true
+  field_tag_berita: true
   langcode: true
   search_api_excerpt: true
