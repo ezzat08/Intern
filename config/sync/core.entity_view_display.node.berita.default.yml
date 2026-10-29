@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.berita.field_ringkasan_berita
     - field.field.node.berita.field_sumber_akhbar
     - field.field.node.berita.field_sumber_penulis
+    - field.field.node.berita.field_tag_berita
     - field.field.node.berita.field_tarikh_penerbitan_berita
     - node.type.berita
   module:
@@ -36,7 +37,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 14
+    weight: 15
     region: content
   field_gambar_utama:
     type: entity_reference_entity_view
@@ -53,7 +54,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 11
+    weight: 13
     region: content
   field_kandungan_berita:
     type: text_default
@@ -85,7 +86,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 12
     region: content
   field_lampiran_media:
     type: entity_reference_entity_view
@@ -115,7 +116,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 13
+    weight: 14
     region: content
   field_ringkasan_berita:
     type: basic_string
@@ -130,7 +131,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 12
+    weight: 10
     region: content
   field_sumber_penulis:
     type: string
@@ -140,6 +141,14 @@ content:
       link_rel: canonical
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_tag_berita:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
     region: content
   field_tarikh_penerbitan_berita:
     type: datetime_default
@@ -153,7 +162,7 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 11
     region: content
 hidden:
   field_foto_album: true

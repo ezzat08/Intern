@@ -1,0 +1,29 @@
+uuid: 694854ff-a6b9-41e7-bbea-a15ecb60ba26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tag_berita
+    - node.type.berita
+    - taxonomy.vocabulary.tag_berita
+id: node.berita.field_tag_berita
+field_name: field_tag_berita
+entity_type: node
+bundle: berita
+label: 'Tag Berita'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tag_berita: tag_berita
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference
