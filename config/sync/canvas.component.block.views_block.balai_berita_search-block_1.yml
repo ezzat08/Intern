@@ -1,0 +1,26 @@
+uuid: a9ca674c-22a6-4993-afef-6ceeacdb9039
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.balai_berita_search
+  module:
+    - views
+active_version: 50818a1e8d97f34c
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'views_block:balai_berita_search-block_1'
+        label: 'Balai Berita Search'
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+label: 'Balai Berita Search'
+id: block.views_block.balai_berita_search-block_1
+provider: views
+source: block
+source_local_id: 'views_block:balai_berita_search-block_1'

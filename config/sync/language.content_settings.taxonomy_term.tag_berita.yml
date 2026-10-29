@@ -1,0 +1,11 @@
+uuid: 33d76f05-2fa3-4371-8c86-0965334ab0a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tag_berita
+id: taxonomy_term.tag_berita
+target_entity_type_id: taxonomy_term
+target_bundle: tag_berita
+default_langcode: site_default
+language_alterable: false
