@@ -229,6 +229,9 @@ content:
   field_tarikh_penerbitan_berita:
     type: datetime_default
     weight: 5
+  field_tarikh_penerbitan_berita:
+    type: datetime_default
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
